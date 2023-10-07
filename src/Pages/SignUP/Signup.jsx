@@ -1,8 +1,13 @@
+import { useContext } from "react";
 import { FaFacebook, FaGithub, FaGoogle } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { UserContext } from "../../AuthProvider/AuthProvider";
 
 
 const Signup = () => {
+
+      const data = useContext(UserContext)
+      console.log(data)
 
       const haldleSubmit = (e)=>{
             e.preventDefault()
