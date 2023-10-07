@@ -1,5 +1,5 @@
 import { Link, NavLink } from "react-router-dom";
-import { FaRegUserCircle, FaUserCircle } from "react-icons/fa";
+import { FaRegUserCircle } from "react-icons/fa";
 
 
 const Navbar = () => {
@@ -45,7 +45,7 @@ const Navbar = () => {
 
 
       return (
-            <nav className="navbar justify-between bg-transparent">
+            <nav className="navbar justify-between py-4 bg-transparent">
                   <div className="navbar-start">
                         <div className="dropdown">
                               <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -58,7 +58,7 @@ const Navbar = () => {
                               </ul>
                         </div>
                         <div>
-                              <img src="/public/images/logo.png" alt="" />
+                              <img className="w-52" src="/public/images/logo.png" alt="" />
                         </div>
                   </div>
                   <div className="navbar-center hidden ml-32 lg:flex">
