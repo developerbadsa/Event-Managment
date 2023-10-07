@@ -3,6 +3,7 @@ import MainLayout from "./MainLayout";
 import Home from "../Pages/Home/Home";
 import SignIn from "../Pages/SignIn/SignIn";
 import Signup from "../Pages/SignUP/Signup";
+import ServiceDetails from "../Pages/ServiceDetails/ServiceDetails";
 
 
 const Routes = createBrowserRouter([
@@ -21,6 +22,11 @@ const Routes = createBrowserRouter([
                   {
                         path: '/signup',
                         element: <Signup></Signup>
+                  },
+                  {
+                        path: '/service/:id',
+                        element: <ServiceDetails></ServiceDetails>,
+                        loader: ()=>fetch('/public/services.json')
                   }
             ]
       }
