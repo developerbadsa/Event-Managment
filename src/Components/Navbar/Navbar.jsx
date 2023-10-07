@@ -16,7 +16,7 @@ const Navbar = () => {
                               }
                         >
                               Home
-                        </NavLink>;
+                        </NavLink>
                   </li>
                   <li>
                         <NavLink
@@ -26,7 +26,7 @@ const Navbar = () => {
                               }
                         >
                               Sign In
-                        </NavLink>;
+                        </NavLink>
                   </li>
                   <li>
                         <NavLink
@@ -36,7 +36,7 @@ const Navbar = () => {
                               }
                         >
                               Sign Up
-                        </NavLink>;
+                        </NavLink>
                   </li>
                   
 
