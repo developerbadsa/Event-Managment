@@ -1,5 +1,6 @@
 [
       {
+        "id": 1,
         "name": "Venue and Infrastructure",
         "image": "https://i.ibb.co/mN4b6Jf/download-1.jpg",
         "price": 10000,
@@ -35,7 +36,7 @@
         "name": "Registration and Participant Support",
         "image": "https://i.ibb.co/HtGXFMh/1520064382091.jpg",
         "price": 3000,
-        "short_description": "Efficient event registration and participant assistance",
+        "short_description": "Efficient event registration and participant",
         "big_description": "Our Registration and Participant Support service takes care of the registration process and participant inquiries. We provide a user-friendly registration system and a dedicated support team to ensure a seamless experience for all attendees."
       },
       {

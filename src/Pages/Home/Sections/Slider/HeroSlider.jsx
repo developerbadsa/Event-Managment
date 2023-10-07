@@ -24,7 +24,7 @@ const HeroSlider = ({ images }) => {
       };
 
       return (
-            <div className="image-slider w-full mx-auto h-[70vh] flex items-center justify-between">
+            <div className="image-slider overflow-hidden w-full mx-auto h-[70vh] flex items-center justify-between">
                   <button onClick={prevImage} className="text-white relative">
                         <div className="absolute left-5 text-3xl">
                               <FaRegArrowAltCircleLeft />
