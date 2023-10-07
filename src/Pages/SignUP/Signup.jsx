@@ -6,8 +6,7 @@ import { UserContext } from "../../AuthProvider/AuthProvider";
 
 const Signup = () => {
 
-      const data = useContext(UserContext)
-      console.log(data)
+      const {createUser} = useContext(UserContext)
 
       const haldleSubmit = (e)=>{
             e.preventDefault()
@@ -15,7 +14,9 @@ const Signup = () => {
             const email = e.target.email.value;
             const password = e.target.password.value;
 
-            console.log(email)
+            createUser(email, password)
+            .then(res=>console.log(res))
+            .catch(err=>console.log(err))
       }
 
 

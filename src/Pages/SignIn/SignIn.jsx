@@ -1,8 +1,24 @@
+import { useContext } from "react";
 import { FaFacebook, FaGithub, FaGoogle } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { UserContext } from "../../AuthProvider/AuthProvider";
 
 
 const SignIn = () => {
+const {logInUser} = useContext(UserContext)
+
+      const handleLogin=(e)=>{
+            e.preventDefault()
+            const email = e.target.email.value;
+            const password = e.target.password.value;
+
+            logInUser(email, password)
+            .then(res=>console.log(res))
+            .catch(err=>console.log(err))
+            
+      }
+
+
       return (
             <div className="flex items-center container mx-auto min-h-[80vh] rounded">
                   <div className="flex h-full w-full flex-col lg:flex-row-reverse justify-between ">
@@ -13,7 +29,7 @@ const SignIn = () => {
                         </div>
                         <div className=" flex-1 bg-red-500 rounded-l-lg">
 
-                              <form className="px-24 my-24">
+                              <form onSubmit={handleLogin} className="px-24 my-24">
                                     <div>
                                           <h3 className="text-center font-extrabold text-4xl text-red-50 my-8">Log In</h3>
                                           <div className="flex gap-4 justify-center my-8">
@@ -23,10 +39,10 @@ const SignIn = () => {
                                           </div>
                                     </div>
                                     <div className="form-control mb-6">
-                                          <input type="Email" placeholder="email" className="input input-bordered" required />
+                                          <input type="Email" name="email" placeholder="email" className="input input-bordered" required />
                                     </div>
                                     <div className="form-control">
-                                          <input type="Password" placeholder="password" className="input input-bordered" required />
+                                          <input type="Password" name="password" placeholder="password" className="input input-bordered" required />
                                           <label className="label ">
                                                 <a href="#" className="label-text-alt link link-hover text-white">Forgot password?</a>
                                           </label>
