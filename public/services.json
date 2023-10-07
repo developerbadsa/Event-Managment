@@ -1,0 +1,50 @@
+[
+      {
+        "name": "Venue and Infrastructure",
+        "image": "https://i.ibb.co/mN4b6Jf/download-1.jpg",
+        "price": 10000,
+        "short_description": "Providing a state-of-the-art event venue",
+        "big_description": "Our Venue and Infrastructure service ensures that your hackathon has the perfect setting. We offer a spacious and well-equipped venue with high-speed internet, comfortable seating, and everything you need for a successful event. Leave the logistics to us, so you can focus on hacking!"
+      },
+      {
+        "id": 2,
+        "name": "Theme and Challenge Definition",
+        "image": "https://i.ibb.co/dm0nHkX/download-2.jpg",
+        "price": 5000,
+        "short_description": "Creating engaging hackathon themes",
+        "big_description": "Our Theme and Challenge Definition service assists you in setting the tone for your hackathon. We work with you to define exciting themes and challenges that inspire participants. With our expertise, your hackathon's theme will captivate the audience and spark innovation."
+      },
+      {
+        "id": 3,
+        "name": "Sponsorship and Prizes",
+        "image": "https://i.ibb.co/kGtgy71/LL-Lenze-Stgt-Financial-Winners.jpg",
+        "price": 15000,
+        "short_description": "Attracting sponsors and offering enticing prizes",
+        "big_description": "Our Sponsorship and Prizes service helps secure financial support and valuable prizes for your hackathon. We have a network of industry partners ready to sponsor your event. Plus, we'll assist in designing prize packages that motivate participants to excel."
+      },
+      {
+        "id": 4,
+        "name": "Judging and Evaluation",
+        "image": "https://i.ibb.co/rwyttht/Y9-I5-CR5-LEwir-IMu0-Hi-Asmkyo-XJFOuu-X4e7hjt-X5m.jpg",
+        "price": 8000,
+        "short_description": "Expert evaluation of hackathon projects",
+        "big_description": "With our Judging and Evaluation service, you'll have a panel of experienced judges who will assess and provide feedback on hackathon projects. We'll help you define evaluation criteria and ensure a fair and transparent judging process for all participants."
+      },
+      {
+        "id": 5,
+        "name": "Registration and Participant Support",
+        "image": "https://i.ibb.co/HtGXFMh/1520064382091.jpg",
+        "price": 3000,
+        "short_description": "Efficient event registration and participant assistance",
+        "big_description": "Our Registration and Participant Support service takes care of the registration process and participant inquiries. We provide a user-friendly registration system and a dedicated support team to ensure a seamless experience for all attendees."
+      },
+      {
+        "id": 6,
+        "name": "Community Building and Networking",
+        "image": "https://i.ibb.co/0Mt9jzR/png-transparent-community-building-community-organization-community-development-others-blue-text-pub.png",
+        "price": 6000,
+        "short_description": "Fostering collaboration and connections",
+        "big_description": "We specialize in building a sense of community at your hackathon. Our Community Building and Networking service includes team-building activities, networking events, and opportunities for participants to connect with mentors and peers. Make your hackathon more than just a competition; make it a memorable experience."
+      }
+    ]
+    
