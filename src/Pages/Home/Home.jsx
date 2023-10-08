@@ -6,8 +6,8 @@ import HeroSlider from "./Sections/Slider/HeroSlider";
 const Home = () => {
 
       const images = [
-            "https://i.ibb.co/Fgq2SV9/download.jpg",
-            "https://i.ibb.co/99vkP4n/328139466-3360714944151581-3934515630612801950-n.jpg"
+            "https://o2oevents.com/wp-content/uploads/2020/06/shutterstock_1723357468-1024x576.png",
+            "https://met.consulting/wp-content/uploads/2020/12/digital-event-2.jpg"
       ]
 
       return (
