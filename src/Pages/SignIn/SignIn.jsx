@@ -1,12 +1,12 @@
 import { useContext } from "react";
 import { FaFacebook, FaGithub, FaGoogle } from "react-icons/fa";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, Navigate, useLocation, useNavigate } from "react-router-dom";
 import { UserContext } from "../../AuthProvider/AuthProvider";
 import Swal from "sweetalert2";
 
 
 const SignIn = () => {
-      const { logInUser, GoogleSignIn } = useContext(UserContext)
+      const { logInUser, GoogleSignIn, FacebookSignIn, GithubSignIn } = useContext(UserContext)
       const navigatePage = useNavigate()
 
       const handleLogin = (e) => {
@@ -56,7 +56,7 @@ const SignIn = () => {
       }
       const handleGithubSignIn = () => {
 
-            GoogleSignIn()
+            GithubSignIn()
                   .then(() => {
                         navigatePage('/');
                         Swal.fire({
@@ -70,7 +70,7 @@ const SignIn = () => {
       }
       const handleFbSignIn = () => {
 
-            GoogleSignIn()
+            FacebookSignIn()
                   .then(() => {
                         navigatePage('/');
                         Swal.fire({

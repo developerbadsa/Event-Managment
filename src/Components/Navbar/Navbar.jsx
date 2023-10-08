@@ -117,12 +117,12 @@ const Navbar = () => {
                   </div>
                   <div className="navbar-end">
                         {
-                              user ? <><div className="text-white">{user.email}</div><div className="dropdown dropdown-end">
+                              user ? <><div className="text-white font-bold ml-4 px-4">{user.displayName}</div><div className="dropdown dropdown-end">
 
 
                                     <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
                                           <div className=" text-white text-3xl">
-                                                <FaRegUserCircle></FaRegUserCircle>
+                                                <img className="rounded-full" src={user.photoURL} alt="" />
                                           </div>
                                     </label>
                                     <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">

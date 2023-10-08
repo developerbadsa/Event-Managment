@@ -3,16 +3,19 @@ import { FaFacebook, FaGithub, FaGoogle } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { UserContext } from "../../AuthProvider/AuthProvider";
 import Swal from "sweetalert2";
+import { updateProfile } from "firebase/auth";
+import { auth } from "../../Firebase/FirebaseAuth";
 
 
 const Signup = () => {
 
-      const { createUser } = useContext(UserContext)
+      const { createUser, GoogleSignIn, FacebookSignIn, GithubSignIn} = useContext(UserContext)
 
 
 
       const handleSubmit = (e) => {
             e.preventDefault()
+            const name = e.target.name.value;
             const profile_pic = e.target.profile_pic.value;
             const email = e.target.email.value;
             const password = e.target.password.value;
@@ -42,6 +45,9 @@ const Signup = () => {
             } else {
                   createUser(email, password)
                         .then(() => {
+                              updateProfile(auth.currentUser, {
+                                    displayName: name, photoURL:  profile_pic
+                                  })
 
                               Swal.fire(
                                     'Congratulations!',
@@ -81,7 +87,7 @@ const Signup = () => {
       }
       const handleGithubSignIn = () => {
 
-            GoogleSignIn()
+            FacebookSignIn()
                   .then(() => {
                         Swal.fire({
                               icon: 'success',
@@ -94,7 +100,7 @@ const Signup = () => {
       }
       const handleFbSignIn = () => {
 
-            GoogleSignIn()
+            GithubSignIn()
                   .then(() => {
                         Swal.fire({
                               icon: 'success',
@@ -127,8 +133,11 @@ const Signup = () => {
                                     </div>
                               </div>
                               <form onSubmit={handleSubmit} className="">
+                              <div className="form-control mb-6">
+                                          <input type="text" name="name" placeholder="Full Name" className="input input-bordered" required/>
+                                    </div>
                                     <div className="form-control mb-6">
-                                          <input type="text" name="profile_pic" placeholder="Profile Picture URL" className="input input-bordered" />
+                                          <input type="text" name="profile_pic" placeholder="Profile Picture URL" className="input input-bordered" required/>
                                     </div>
                                     <div className="form-control mb-6">
                                           <input type="Email" name="email" placeholder="email" className="input input-bordered" required />
