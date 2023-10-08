@@ -1,8 +1,14 @@
 import { Link, NavLink } from "react-router-dom";
 import { FaRegUserCircle } from "react-icons/fa";
+import { useContext } from "react";
+import { UserContext } from "../../AuthProvider/AuthProvider";
 
 
 const Navbar = () => {
+
+      const { user, logOutUser } = useContext(UserContext);
+
+      console.log(user)
 
 
       const menuItems = (
@@ -18,30 +24,42 @@ const Navbar = () => {
                               Home
                         </NavLink>
                   </li>
-                  <li>
-                        <NavLink
-                              to="/signin"
-                              className={({ isActive, isPending }) =>
-                                    isPending ? "text-slate-100" : isActive ? "text-red-500" : "text-slate-100"
-                              }
-                        >
-                              Sign In
-                        </NavLink>
-                  </li>
-                  <li>
-                        <NavLink
-                              to="/signup"
-                              className={({ isActive, isPending }) =>
-                                    isPending ? "text-slate-100" : isActive ? "text-red-500" : "text-slate-100"
-                              }
-                        >
-                              Sign Up
-                        </NavLink>
-                  </li>
-                  
+                  {
+                        !user && <li>
+                              <NavLink
+                                    to="/signin"
+                                    className={({ isActive, isPending }) =>
+                                          isPending ? "text-slate-100" : isActive ? "text-red-500" : "text-slate-100"
+                                    }
+                              >
+                                    Sign In
+                              </NavLink>
+                        </li>
+                  }
+                  {
+                        !user && <li>
+                              <NavLink
+                                    to="/signup"
+                                    className={({ isActive, isPending }) =>
+                                          isPending ? "text-slate-100" : isActive ? "text-red-500" : "text-slate-100"
+                                    }
+                              >
+                                    Sign Up
+                              </NavLink>
+                        </li>
+                  }
+
 
             </>
       )
+
+
+
+      const handleLogOut = () => {
+            logOutUser()
+                  .then(() => console.log('logged out done'))
+                  .catch(err => console.log(err))
+      }
 
 
       return (
@@ -69,17 +87,22 @@ const Navbar = () => {
                         </ul>
                   </div>
                   <div className="navbar-end">
-                        <div className="dropdown dropdown-end">
-                              <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+                        {
+                              user ? <div className="dropdown dropdown-end">
+                                    <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+                                          <div className=" text-white text-3xl">
+                                                <FaRegUserCircle></FaRegUserCircle>
+                                          </div>
+                                    </label>
+                                    <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+                                          <li><Link >Dashboard</Link></li>
+                                          <li><button onClick={handleLogOut}>Logout</button></li>
+                                    </ul>
+                              </div> :
                                     <div className=" text-white text-3xl">
                                           <FaRegUserCircle></FaRegUserCircle>
                                     </div>
-                              </label>
-                              <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
-                                    <li><Link >Dashboard</Link></li>
-                                    <li><Link>Logout</Link></li>
-                              </ul>
-                        </div>
+                        }
                   </div>
             </nav>
       );
