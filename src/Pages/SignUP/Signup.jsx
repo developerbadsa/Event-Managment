@@ -22,7 +22,7 @@ const Signup = () => {
 
 
       return (
-            <div className="flex items-center container mx-auto min-h-[90vh] rounded">
+            <div className="flex items-center container mx-auto min-h-[90vh] rounded py-12">
                   <div className="flex h-full w-full flex-col lg:flex-row justify-between transition-opacity">
                         <div className="flex flex-col items-center justify-center w-[50%] bg-white text-black rounded-l-lg">
                               <h1 className="text-5xl font-bold">Sign In</h1>

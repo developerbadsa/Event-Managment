@@ -20,7 +20,7 @@ const {logInUser} = useContext(UserContext)
 
 
       return (
-            <div className="flex items-center container mx-auto min-h-[80vh] rounded">
+            <div className="flex items-center container mx-auto min-h-[80vh] rounded py-14">
                   <div className="flex h-full w-full flex-col lg:flex-row-reverse justify-between ">
                         <div className="flex flex-col items-center justify-center w-[50%] bg-white text-black rounded-r-lg">
                               <h1 className="text-5xl font-bold">Sign Up</h1>
