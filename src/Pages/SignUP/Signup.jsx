@@ -9,8 +9,6 @@ const Signup = () => {
 
       const { createUser } = useContext(UserContext)
 
-      const [signInSuccess, SetSignUpSuccess] = useState(false)
-
 
 
       const handleSubmit = (e) => {
@@ -20,57 +18,98 @@ const Signup = () => {
             const password = e.target.password.value;
 
 
-            if(password.length < 6){
+            if (password.length < 6) {
                   Swal.fire({
                         icon: 'error',
                         title: 'Oops...',
                         text: 'Password must need upto 6 character'
-                        })
-                        return
-            }else if(!/[A-Z]/.test(password)){
+                  })
+                  return
+            } else if (!/[A-Z]/.test(password)) {
                   Swal.fire({
                         icon: 'error',
                         title: 'Oops...',
                         text: 'Password must need to at least one capital letter'
-                        })
-                        return
-            }else if(!/[\W_]/.test(password)){
+                  })
+                  return
+            } else if (!/[\W_]/.test(password)) {
                   Swal.fire({
                         icon: 'error',
                         title: 'Oops...',
                         text: 'Password must need to at least one special character'
-                        })
-                        return
-            }else{
+                  })
+                  return
+            } else {
                   createUser(email, password)
-                  .then(()=>{
-                      
-                         Swal.fire(
-                        'Congratulations!',
-                        'Successfuly you have created a user!',
-                        'success'
-                  )
-                      
-                  })
-                  .catch(err => {
-                        Swal.fire({
-                              icon: 'error',
-                              title: 'Oops...',
-                              text: err.message
+                        .then(() => {
+
+                              Swal.fire(
+                                    'Congratulations!',
+                                    'Successfuly you have created a user!',
+                                    'success'
+                              )
+
+                        })
+                        .catch(err => {
+                              Swal.fire({
+                                    icon: 'error',
+                                    title: 'Oops...',
+                                    text: err.message
                               })
-                  })
+                        })
             }
 
+      }
 
 
 
-           
+
+
+
+      const handleGoogleSignIn = () => {
+
+            GoogleSignIn()
+                  .then(() => {
+                        Swal.fire({
+                              icon: 'success',
+                              text: 'You have successfully logged in with Google'
+                        });
+                  })
+                  .catch(err => console.log(err))
+            return
+
+      }
+      const handleGithubSignIn = () => {
+
+            GoogleSignIn()
+                  .then(() => {
+                        Swal.fire({
+                              icon: 'success',
+                              text: 'You have successfully logged in with Github'
+                        });
+                  })
+                  .catch(err => console.log(err))
+            return
+
+      }
+      const handleFbSignIn = () => {
+
+            GoogleSignIn()
+                  .then(() => {
+                        Swal.fire({
+                              icon: 'success',
+                              text: 'You have successfully logged in with Facebook'
+                        });
+                  })
+                  .catch(err => console.log(err))
+            return
+
       }
 
 
 
       return (
-            
+
             <div className="flex items-center container mx-auto min-h-[90vh] rounded py-12">
                   <div className="flex h-full w-full flex-col lg:flex-row justify-between transition-opacity">
                         <div className="flex flex-col items-center justify-center w-[50%] bg-white text-black rounded-l-lg">
@@ -82,9 +121,9 @@ const Signup = () => {
                               <div>
                                     <h3 className="text-center font-extrabold text-4xl text-red-50 my-8">Sign Up</h3>
                                     <div className="flex gap-4 justify-center my-8">
-                                          <button className="btn btn-circle text-2xl"> <FaGoogle></FaGoogle></button>
-                                          <button className="btn btn-circle text-2xl"> <FaFacebook></FaFacebook></button>
-                                          <button className="btn btn-circle text-2xl"> <FaGithub></FaGithub></button>
+                                          <button onClick={handleGoogleSignIn} className="btn btn-circle text-2xl"> <FaGoogle></FaGoogle></button>
+                                          <button onClick={handleFbSignIn} className="btn btn-circle text-2xl"> <FaFacebook></FaFacebook></button>
+                                          <button onClick={handleGithubSignIn} className="btn btn-circle text-2xl"> <FaGithub></FaGithub></button>
                                     </div>
                               </div>
                               <form onSubmit={handleSubmit} className="">
