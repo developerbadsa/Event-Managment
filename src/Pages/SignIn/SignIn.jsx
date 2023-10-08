@@ -1,13 +1,12 @@
 import { useContext } from "react";
 import { FaFacebook, FaGithub, FaGoogle } from "react-icons/fa";
-import { Link, Navigate, useLocation, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { UserContext } from "../../AuthProvider/AuthProvider";
 import Swal from "sweetalert2";
 
 
 const SignIn = () => {
       const { logInUser, GoogleSignIn } = useContext(UserContext)
-      const location = useLocation();
       const navigatePage = useNavigate()
 
       const handleLogin = (e) => {
