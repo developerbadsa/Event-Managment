@@ -5,9 +5,14 @@ import { UserContext } from "../../../AuthProvider/AuthProvider";
 
 const LogInPrivateRoute = ({children}) => {
 
-      const {user} = useContext(UserContext)
+      const {user, loading} = useContext(UserContext)
 
-      if(user){
+      console.log(loading)
+
+      if(loading){
+            return  <span className="loading loading-bars loading-lg"></span>
+          
+      }else if(user){
             return children
       }
 

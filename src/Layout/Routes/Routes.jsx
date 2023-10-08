@@ -8,12 +8,14 @@ import LogInPrivateRoute from "./PrivateRoutes/LogInPrivateRoute";
 import RedirectToHome from "./PrivateRoutes/RedirectToHome";
 import Dashboard from "../../Pages/Dashboard/Dashboard";
 import Contact from "../../Pages/Contact/Contact";
+import ErrorPage from "../../Pages/ErrorPage/ErrorPage";
 
 
 const Routes = createBrowserRouter([
       {
             path: '/',
             element: <MainLayout></MainLayout>,
+            errorElement: <ErrorPage></ErrorPage>,
             children: [
                   {
                         path: '/',

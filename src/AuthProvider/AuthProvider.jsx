@@ -9,54 +9,54 @@ export const UserContext = createContext(null)
 const AuthProvider = ({ children }) => {
 
       const [user, setUser] = useState(null)
+      const [loading, setLoading] = useState(true);
 
 
       const createUser = (email, password) => {
-
+            setLoading(true)
             return createUserWithEmailAndPassword(auth, email, password)
       }
       const logInUser = (email, password) => {
+            setLoading(true)
             return signInWithEmailAndPassword(auth, email, password)
       }
 
-    useEffect(()=>{
+      useEffect(() => {
 
-      const unSubscribe =  onAuthStateChanged(auth, (CurrentUser) => {
-            if (CurrentUser) {
+            const unSubscribe = onAuthStateChanged(auth, (CurrentUser) => {
                   setUser(CurrentUser)
-            }else{
-                  setUser(null)
-            }
-            
-      });
+                  setLoading(false)
 
-      return unSubscribe;
+            });
 
-    },[])
+            return unSubscribe;
 
-    
-    const googleProvider = new GoogleAuthProvider();
-    const facebookProvider = new FacebookAuthProvider();
-    const githubProvider = new GithubAuthProvider();
+      }, [])
 
-    const GoogleSignIn = ()=>{
-      
-     return signInWithPopup(auth, googleProvider)
 
-    }
-    const FacebookSignIn = ()=>{
-      
-      return signInWithPopup(auth, facebookProvider)
- 
-     }
-     const GithubSignIn = ()=>{
-      
-      return signInWithPopup(auth, githubProvider)
- 
-     }
+      const googleProvider = new GoogleAuthProvider();
+      const facebookProvider = new FacebookAuthProvider();
+      const githubProvider = new GithubAuthProvider();
+
+      const GoogleSignIn = () => {
+            setLoading(true)
+            return signInWithPopup(auth, googleProvider)
+
+      }
+      const FacebookSignIn = () => {
+            setLoading(true)
+            return signInWithPopup(auth, facebookProvider)
+
+      }
+      const GithubSignIn = () => {
+            setLoading(true)
+            return signInWithPopup(auth, githubProvider)
+
+      }
 
       const logOutUser = () => {
-           return signOut(auth)
+            setLoading(true)
+            return signOut(auth)
       }
 
 
@@ -66,6 +66,7 @@ const AuthProvider = ({ children }) => {
             user,
             GoogleSignIn,
             GithubSignIn,
+            loading,
             FacebookSignIn,
             logOutUser
       }
