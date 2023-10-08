@@ -3,7 +3,6 @@ import { FaFacebook, FaGithub, FaGoogle } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { UserContext } from "../../AuthProvider/AuthProvider";
 import Swal from "sweetalert2";
-import { space } from "postcss/lib/list";
 
 
 const Signup = () => {
@@ -20,7 +19,30 @@ const Signup = () => {
             const email = e.target.email.value;
             const password = e.target.password.value;
 
-            createUser(email, password)
+
+            if(password.length < 6){
+                  Swal.fire({
+                        icon: 'error',
+                        title: 'Oops...',
+                        text: 'Password must need upto 6 character'
+                        })
+                        return
+            }else if(!/[A-Z]/.test(password)){
+                  Swal.fire({
+                        icon: 'error',
+                        title: 'Oops...',
+                        text: 'Password must need to at least one capital letter'
+                        })
+                        return
+            }else if(!/[\W_]/.test(password)){
+                  Swal.fire({
+                        icon: 'error',
+                        title: 'Oops...',
+                        text: 'Password must need to at least one special character'
+                        })
+                        return
+            }else{
+                  createUser(email, password)
                   .then(()=>{
                       
                          Swal.fire(
@@ -37,6 +59,12 @@ const Signup = () => {
                               text: err.message
                               })
                   })
+            }
+
+
+
+
+           
       }
 
 
