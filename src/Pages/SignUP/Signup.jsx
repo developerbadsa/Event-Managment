@@ -1,27 +1,48 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { FaFacebook, FaGithub, FaGoogle } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { UserContext } from "../../AuthProvider/AuthProvider";
+import Swal from "sweetalert2";
+import { space } from "postcss/lib/list";
 
 
 const Signup = () => {
 
-      const {createUser} = useContext(UserContext)
+      const { createUser } = useContext(UserContext)
 
-      const haldleSubmit = (e)=>{
+      const [signInSuccess, SetSignUpSuccess] = useState(false)
+
+
+
+      const handleSubmit = (e) => {
             e.preventDefault()
             const profile_pic = e.target.profile_pic.value;
             const email = e.target.email.value;
             const password = e.target.password.value;
 
             createUser(email, password)
-            .then(res=>console.log(res))
-            .catch(err=>console.log(err))
+                  .then(()=>{
+                      
+                         Swal.fire(
+                        'Congratulations!',
+                        'Successfuly you have created a user!',
+                        'success'
+                  )
+                      
+                  })
+                  .catch(err => {
+                        Swal.fire({
+                              icon: 'error',
+                              title: 'Oops...',
+                              text: err.message
+                              })
+                  })
       }
 
 
 
       return (
+            
             <div className="flex items-center container mx-auto min-h-[90vh] rounded py-12">
                   <div className="flex h-full w-full flex-col lg:flex-row justify-between transition-opacity">
                         <div className="flex flex-col items-center justify-center w-[50%] bg-white text-black rounded-l-lg">
@@ -38,8 +59,7 @@ const Signup = () => {
                                           <button className="btn btn-circle text-2xl"> <FaGithub></FaGithub></button>
                                     </div>
                               </div>
-                              <form onSubmit={haldleSubmit} className="">
-
+                              <form onSubmit={handleSubmit} className="">
                                     <div className="form-control mb-6">
                                           <input type="text" name="profile_pic" placeholder="Profile Picture URL" className="input input-bordered" />
                                     </div>
@@ -53,7 +73,7 @@ const Signup = () => {
                                           </label>
                                     </div>
                                     <div className="form-control mt-6">
-                                          <button className="btn font-bold">Sign Up</button>
+                                          <button type="submit" className="btn font-bold">Sign Up</button>
                                     </div>
                               </form>
                         </div>

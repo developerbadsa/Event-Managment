@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { FaFacebook, FaGithub, FaGoogle } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { UserContext } from "../../AuthProvider/AuthProvider";
+import Swal from "sweetalert2";
 
 
 const SignIn = () => {
@@ -13,8 +14,22 @@ const {logInUser} = useContext(UserContext)
             const password = e.target.password.value;
 
             logInUser(email, password)
-            .then(res=>console.log(res))
-            .catch(err=>console.log(err))
+            .then(()=>{
+                      
+                  Swal.fire(
+                 'Congratulations!',
+                 'Successfuly logged in',
+                 'success'
+           )
+               
+           })
+           .catch(err => {
+                 Swal.fire({
+                       icon: 'error',
+                       title: 'Oops...',
+                       text: err.message
+                       })
+           })
             
       }
 
