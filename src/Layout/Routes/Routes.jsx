@@ -31,11 +31,11 @@ const Routes = createBrowserRouter([
                   },
                   {
                         path: '/dashboard',
-                        element: <Dashboard/>
+                        element:<LogInPrivateRoute> <Dashboard></Dashboard></LogInPrivateRoute>
                   },
                   {
                         path: '/contact',
-                        element: <Contact></Contact>
+                        element: <LogInPrivateRoute><Contact></Contact></LogInPrivateRoute>
                   },
                   {
                         path: '/service/:id',
