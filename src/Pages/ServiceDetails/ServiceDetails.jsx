@@ -16,7 +16,7 @@ const ServiceDetails = () => {
 
       return (
             <div className="text-white container mx-auto">
-                  <div className="flex justify-between items-center my-6">
+                  <div className="flex-col lg:flex justify-between items-center my-6">
                         <div className="flex-1">
                               <img className="w-full" src={image} alt={name} />
                         </div>
