@@ -40,11 +40,40 @@ const {logInUser, GoogleSignIn} = useContext(UserContext)
       const handleGoogleSignIn = ()=>{
             
             GoogleSignIn()
-            .then(res=>console.log(res))
+            .then(()=>{
+                  Swal.fire({
+                        icon: 'success',
+                        text: 'You have successfully logged in with Google'
+                    });
+            })
             .catch(err=>console.log(err))
             return
 
-            console.log(GoogleSignIn)
+      }
+      const handleGithubSignIn = ()=>{
+            
+            GoogleSignIn()
+            .then(()=>{
+                  Swal.fire({
+                        icon: 'success',
+                        text: 'You have successfully logged in with Github'
+                    });
+            })
+            .catch(err=>console.log(err))
+            return
+
+      }
+      const handleFbSignIn = ()=>{
+            
+            GoogleSignIn()
+            .then(()=>{
+                  Swal.fire({
+                        icon: 'success',
+                        text: 'You have successfully logged in with Facebook'
+                    });
+            })
+            .catch(err=>console.log(err))
+            return
 
       }
 
@@ -64,8 +93,8 @@ const {logInUser, GoogleSignIn} = useContext(UserContext)
                                           <h3 className="text-center font-extrabold text-4xl text-red-50 my-8">Log In</h3>
                                           <div className="flex gap-4 justify-center my-8">
                                                <button onClick={handleGoogleSignIn} className="btn btn-circle text-2xl"> <FaGoogle></FaGoogle></button>
-                                               <button className="btn btn-circle text-2xl"> <FaFacebook></FaFacebook></button>
-                                               <button className="btn btn-circle text-2xl"> <FaGithub></FaGithub></button>
+                                               <button onClick={handleFbSignIn} className="btn btn-circle text-2xl"> <FaFacebook></FaFacebook></button>
+                                               <button onClick={handleGithubSignIn} className="btn btn-circle text-2xl"> <FaGithub></FaGithub></button>
                                           </div>
                                     </div>
                                     <div className="form-control mb-6">
