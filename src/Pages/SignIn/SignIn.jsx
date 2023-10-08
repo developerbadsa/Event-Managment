@@ -24,11 +24,13 @@ const {logInUser} = useContext(UserContext)
                
            })
            .catch(err => {
-                 Swal.fire({
-                       icon: 'error',
-                       title: 'Oops...',
-                       text: err.message
-                       })
+
+
+            Swal.fire({
+                  icon: 'error',
+                  title: 'Oops...',
+                  text: err.message
+              });
            })
             
       }
