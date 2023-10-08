@@ -1,78 +1,85 @@
 import { useContext } from "react";
 import { FaFacebook, FaGithub, FaGoogle } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, Navigate, useLocation, useNavigate } from "react-router-dom";
 import { UserContext } from "../../AuthProvider/AuthProvider";
 import Swal from "sweetalert2";
 
 
 const SignIn = () => {
-const {logInUser, GoogleSignIn} = useContext(UserContext)
+      const { logInUser, GoogleSignIn } = useContext(UserContext)
+      const location = useLocation();
+      const navigatePage = useNavigate()
 
-      const handleLogin=(e)=>{
+      const handleLogin = (e) => {
             e.preventDefault()
             const email = e.target.email.value;
             const password = e.target.password.value;
 
             logInUser(email, password)
-            .then(()=>{
-                      
-                  Swal.fire(
-                 'Congratulations!',
-                 'Successfuly logged in',
-                 'success'
-           )
-               
-           })
-           .catch(err => {
+                  .then(() => {
+
+                        navigatePage('/');
+
+                        Swal.fire(
+                              'Congratulations!',
+                              'Successfuly logged in with Email and Password',
+                              'success'
+                        )
+
+                  })
+                  .catch(err => {
 
 
-            Swal.fire({
-                  icon: 'error',
-                  title: 'Oops...',
-                  text: err.message
-              });
-           })
-            
+                        Swal.fire({
+                              icon: 'error',
+                              title: 'Oops...',
+                              text: err.message
+                        });
+                  })
+
       }
 
 
 
-      const handleGoogleSignIn = ()=>{
-            
+      const handleGoogleSignIn = () => {
+
             GoogleSignIn()
-            .then(()=>{
-                  Swal.fire({
-                        icon: 'success',
-                        text: 'You have successfully logged in with Google'
-                    });
-            })
-            .catch(err=>console.log(err))
+                  .then(() => {
+                        navigatePage('/');
+                        Swal.fire({
+                              icon: 'success',
+                              text: 'You have successfully logged in with Google'
+                        });
+                  })
+                  .catch(err => console.log(err))
             return
 
       }
-      const handleGithubSignIn = ()=>{
-            
+      const handleGithubSignIn = () => {
+
             GoogleSignIn()
-            .then(()=>{
-                  Swal.fire({
-                        icon: 'success',
-                        text: 'You have successfully logged in with Github'
-                    });
-            })
-            .catch(err=>console.log(err))
+                  .then(() => {
+                        navigatePage('/');
+                        Swal.fire({
+                              icon: 'success',
+                              text: 'You have successfully logged in with Github'
+                        });
+                  })
+                  .catch(err => console.log(err))
             return
 
       }
-      const handleFbSignIn = ()=>{
-            
+      const handleFbSignIn = () => {
+
             GoogleSignIn()
-            .then(()=>{
-                  Swal.fire({
-                        icon: 'success',
-                        text: 'You have successfully logged in with Facebook'
-                    });
-            })
-            .catch(err=>console.log(err))
+                  .then(() => {
+                        navigatePage('/');
+                        Swal.fire({
+                              icon: 'success',
+                              text: 'You have successfully logged in with Facebook'
+                        });
+                  })
+                  .catch(err => console.log(err))
             return
 
       }
@@ -92,9 +99,9 @@ const {logInUser, GoogleSignIn} = useContext(UserContext)
                                     <div>
                                           <h3 className="text-center font-extrabold text-4xl text-red-50 my-8">Log In</h3>
                                           <div className="flex gap-4 justify-center my-8">
-                                               <button onClick={handleGoogleSignIn} className="btn btn-circle text-2xl"> <FaGoogle></FaGoogle></button>
-                                               <button onClick={handleFbSignIn} className="btn btn-circle text-2xl"> <FaFacebook></FaFacebook></button>
-                                               <button onClick={handleGithubSignIn} className="btn btn-circle text-2xl"> <FaGithub></FaGithub></button>
+                                                <button onClick={handleGoogleSignIn} className="btn btn-circle text-2xl"> <FaGoogle></FaGoogle></button>
+                                                <button onClick={handleFbSignIn} className="btn btn-circle text-2xl"> <FaFacebook></FaFacebook></button>
+                                                <button onClick={handleGithubSignIn} className="btn btn-circle text-2xl"> <FaGithub></FaGithub></button>
                                           </div>
                                     </div>
                                     <div className="form-control mb-6">

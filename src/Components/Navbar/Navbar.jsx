@@ -25,6 +25,30 @@ const Navbar = () => {
                               Home
                         </NavLink>
                   </li>
+                   {
+                        user && <li>
+                              <NavLink
+                                    to="/dashboard"
+                                    className={({ isActive, isPending }) =>
+                                          isPending ? "text-slate-100" : isActive ? "text-red-500" : "text-slate-100"
+                                    }
+                              >
+                                    Dashboard
+                              </NavLink>
+                        </li>
+                  }
+                  {
+                        user && <li>
+                              <NavLink
+                                    to="/contact"
+                                    className={({ isActive, isPending }) =>
+                                          isPending ? "text-slate-100" : isActive ? "text-red-500" : "text-slate-100"
+                                    }
+                              >
+                                   Contact
+                              </NavLink>
+                        </li>
+                  }
                   {
                         !user && <li>
                               <NavLink
@@ -68,7 +92,7 @@ const Navbar = () => {
 
 
       return (
-            <nav className="navbar container mx-auto justify-between py-4 bg-transparent">
+            <nav className="navbar max-w-7xl mx-auto justify-between py-8 border-blue-200 bg-transparent">
                   <div className="navbar-start">
                         <div className="dropdown">
                               <label tabIndex={0} className="btn btn-ghost lg:hidden">

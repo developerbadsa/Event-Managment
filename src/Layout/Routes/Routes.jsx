@@ -6,6 +6,8 @@ import Signup from "../../Pages/SignUP/Signup";
 import ServiceDetails from "../../Pages/ServiceDetails/ServiceDetails";
 import LogInPrivateRoute from "./PrivateRoutes/LogInPrivateRoute";
 import RedirectToHome from "./PrivateRoutes/RedirectToHome";
+import Dashboard from "../../Pages/Dashboard/Dashboard";
+import Contact from "../../Pages/Contact/Contact";
 
 
 const Routes = createBrowserRouter([
@@ -24,6 +26,14 @@ const Routes = createBrowserRouter([
                   {
                         path: '/signup',
                         element: <RedirectToHome> <Signup></Signup></RedirectToHome>
+                  },
+                  {
+                        path: '/dashboard',
+                        element: <Dashboard/>
+                  },
+                  {
+                        path: '/contact',
+                        element: <Contact></Contact>
                   },
                   {
                         path: '/service/:id',
