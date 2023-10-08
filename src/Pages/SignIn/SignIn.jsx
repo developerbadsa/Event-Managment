@@ -84,17 +84,20 @@ const SignIn = () => {
       }
 
 
+
+
+
       return (
             <div className="flex items-center container mx-auto min-h-[80vh] rounded py-14">
-                  <div className="flex h-full w-full flex-col lg:flex-row-reverse justify-between ">
-                        <div className="flex flex-col items-center justify-center w-[50%] bg-white text-black rounded-r-lg">
+                  <div className="flex h-full w-full flex-col-reverse lg:flex-row-reverse justify-between ">
+                        <div className="flex flex-col items-center justify-center w-full py-8 lg:py-0 lg:w-[50%] bg-white text-black rounded-r-lg">
                               <h1 className="text-5xl font-bold">Sign Up</h1>
                               <p className="py-6">You Don't have created acount?</p>
                               <Link to='/signup'><button className="btn hover:bg-red-500 bg-red-500 text-white">Sign Up Now</button></Link>
                         </div>
                         <div className=" flex-1 bg-red-500 rounded-l-lg">
 
-                              <form onSubmit={handleLogin} className="px-24 my-24">
+                              <form onSubmit={handleLogin} className="px-24 my-8 lg:my-24">
                                     <div>
                                           <h3 className="text-center font-extrabold text-4xl text-red-50 my-8">Log In</h3>
                                           <div className="flex gap-4 justify-center my-8">
