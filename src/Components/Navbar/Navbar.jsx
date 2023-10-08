@@ -2,6 +2,7 @@ import { Link, NavLink } from "react-router-dom";
 import { FaRegUserCircle } from "react-icons/fa";
 import { useContext } from "react";
 import { UserContext } from "../../AuthProvider/AuthProvider";
+import Swal from "sweetalert2";
 
 
 const Navbar = () => {
@@ -57,7 +58,11 @@ const Navbar = () => {
 
       const handleLogOut = () => {
             logOutUser()
-                  .then(() => console.log('logged out done'))
+                  .then(() => {
+                        Swal.fire(
+                              'Successfuly logged Out',
+                              'success')
+                  })
                   .catch(err => console.log(err))
       }
 
@@ -88,7 +93,9 @@ const Navbar = () => {
                   </div>
                   <div className="navbar-end">
                         {
-                              user ? <div className="dropdown dropdown-end">
+                              user ? <><div className="text-white">{user.email}</div><div className="dropdown dropdown-end">
+
+
                                     <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
                                           <div className=" text-white text-3xl">
                                                 <FaRegUserCircle></FaRegUserCircle>
@@ -98,7 +105,7 @@ const Navbar = () => {
                                           <li><Link >Dashboard</Link></li>
                                           <li><button onClick={handleLogOut}>Logout</button></li>
                                     </ul>
-                              </div> :
+                              </div></> :
                                     <div className=" text-white text-3xl">
                                           <FaRegUserCircle></FaRegUserCircle>
                                     </div>

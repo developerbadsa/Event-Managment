@@ -6,7 +6,7 @@ import Swal from "sweetalert2";
 
 
 const SignIn = () => {
-const {logInUser} = useContext(UserContext)
+const {logInUser, GoogleSignIn} = useContext(UserContext)
 
       const handleLogin=(e)=>{
             e.preventDefault()
@@ -36,6 +36,19 @@ const {logInUser} = useContext(UserContext)
       }
 
 
+
+      const handleGoogleSignIn = ()=>{
+            
+            GoogleSignIn()
+            .then(res=>console.log(res))
+            .catch(err=>console.log(err))
+            return
+
+            console.log(GoogleSignIn)
+
+      }
+
+
       return (
             <div className="flex items-center container mx-auto min-h-[80vh] rounded py-14">
                   <div className="flex h-full w-full flex-col lg:flex-row-reverse justify-between ">
@@ -50,7 +63,7 @@ const {logInUser} = useContext(UserContext)
                                     <div>
                                           <h3 className="text-center font-extrabold text-4xl text-red-50 my-8">Log In</h3>
                                           <div className="flex gap-4 justify-center my-8">
-                                               <button className="btn btn-circle text-2xl"> <FaGoogle></FaGoogle></button>
+                                               <button onClick={handleGoogleSignIn} className="btn btn-circle text-2xl"> <FaGoogle></FaGoogle></button>
                                                <button className="btn btn-circle text-2xl"> <FaFacebook></FaFacebook></button>
                                                <button className="btn btn-circle text-2xl"> <FaGithub></FaGithub></button>
                                           </div>
@@ -65,7 +78,7 @@ const {logInUser} = useContext(UserContext)
                                           </label>
                                     </div>
                                     <div className="form-control mt-6">
-                                          <button className="btn font-bold">Login</button>
+                                          <button type="submit" className="btn font-bold">Login</button>
                                     </div>
                               </form>
                         </div>
