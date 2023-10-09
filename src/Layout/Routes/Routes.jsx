@@ -45,7 +45,7 @@ const Routes = createBrowserRouter([
                   {
                         path: '/service/:id',
                         element: <LogInPrivateRoute><ServiceDetails/></LogInPrivateRoute>,
-                        loader: ()=>fetch('/public/services.json')
+                        loader: ()=>fetch('https://raw.githubusercontent.com/developerbadsa/news-json-file/main/services.json')
                   }
             ]
       }
