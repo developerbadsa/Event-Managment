@@ -49,6 +49,16 @@ const Navbar = () => {
                               </NavLink>
                         </li>
                   }
+                  <li>
+                              <NavLink
+                                    to="/about"
+                                    className={({ isActive, isPending }) =>
+                                          isPending ? "text-slate-100" : isActive ? "text-red-500" : "text-slate-100"
+                                    }
+                              >
+                                    About
+                              </NavLink>
+                  </li>
                   {
                         !user && <li>
                               <NavLink

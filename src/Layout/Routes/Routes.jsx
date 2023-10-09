@@ -9,6 +9,7 @@ import RedirectToHome from "./PrivateRoutes/RedirectToHome";
 import Dashboard from "../../Pages/Dashboard/Dashboard";
 import Contact from "../../Pages/Contact/Contact";
 import ErrorPage from "../../Pages/ErrorPage/ErrorPage";
+import AboutUs from "../../Pages/AboutUs/AboutUs";
 
 
 const Routes = createBrowserRouter([
@@ -36,6 +37,10 @@ const Routes = createBrowserRouter([
                   {
                         path: '/contact',
                         element: <LogInPrivateRoute><Contact></Contact></LogInPrivateRoute>
+                  },
+                  {
+                        path: '/about',
+                        element: <AboutUs></AboutUs>
                   },
                   {
                         path: '/service/:id',

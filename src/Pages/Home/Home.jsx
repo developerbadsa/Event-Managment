@@ -1,3 +1,4 @@
+import AboutUs from "../AboutUs/AboutUs";
 import Navbar from "../../Components/Navbar/Navbar";
 import Conference from "./Sections/Conference/Conference";
 import Services from "./Sections/Services/Services";
@@ -16,6 +17,7 @@ const Home = () => {
                   <div className="max-w-7xl mx-auto">
                         <HeroSlider images={images}></HeroSlider>
                         <br />
+                        <AboutUs></AboutUs>
                         <Services></Services>
                         <Conference></Conference>
                   </div>
