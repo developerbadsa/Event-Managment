@@ -50,14 +50,14 @@ const Navbar = () => {
                         </li>
                   }
                   <li>
-                              <NavLink
-                                    to="/about"
-                                    className={({ isActive, isPending }) =>
-                                          isPending ? "text-slate-100" : isActive ? "text-red-500" : "text-slate-100"
-                                    }
-                              >
-                                    About
-                              </NavLink>
+                        <NavLink
+                              to="/about"
+                              className={({ isActive, isPending }) =>
+                                    isPending ? "text-slate-100" : isActive ? "text-red-500" : "text-slate-100"
+                              }
+                        >
+                              About
+                        </NavLink>
                   </li>
                   {
                         !user && <li>
@@ -137,12 +137,12 @@ const Navbar = () => {
 
                                     <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
                                           <div className=" text-white text-3xl">
-                                                <img className="rounded-full" src={user.photoURL} alt="" />
+                                                {user.photoURL ? <img className="rounded-full" src={user.photoURL} alt="" />:  <FaRegUserCircle></FaRegUserCircle>}
                                           </div>
                                     </label>
                                     <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
                                           <li className="bg-black "><div className="text-white font-bold ml-4 px-4 lg:hidden">{user.displayName}</div></li>
-                                          <li><Link >Dashboard</Link></li>
+                                          <li><Link to={'/dashboard'}>Dashboard</Link></li>
                                           <li><button onClick={handleLogOut}>Logout</button></li>
                                     </ul>
                               </div></> :
