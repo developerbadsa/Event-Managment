@@ -113,12 +113,12 @@ const Navbar = () => {
                               </ul>
                         </div>
                         <div className="hidden lg:inline-block">
-                              <img className="w-52" src="./public/images/logo.png" alt="" />
+                              <img className="w-52" src="https://i.ibb.co/YkDHzSH/logo.png" alt="" />
                         </div>
                   </div>
                   <div className="navbar-center ">
                         <div className="lg:hidden -ml-10">
-                              <img className="w-44 mr-5" src="./public/images/logo.png" alt="" />
+                              <img className="w-44 mr-5" src="https://i.ibb.co/YkDHzSH/logo.png" alt="" />
                         </div>
                         <div className="hidden ml-32 lg:flex">
                               <ul className="font-semibold text-xl gap-4  menu-horizontal px-1">
