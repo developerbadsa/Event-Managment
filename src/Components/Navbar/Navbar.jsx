@@ -9,8 +9,6 @@ const Navbar = () => {
 
       const { user, logOutUser } = useContext(UserContext);
 
-      console.log(user)
-
 
       const menuItems = (
             <>
