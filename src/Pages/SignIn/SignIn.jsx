@@ -10,8 +10,6 @@ const SignIn = () => {
       const navigatePage = useNavigate()
       const formRef = useRef(null)
 
-      console.log(formRef)
-
       const handleLogin = (e) => {
             e.preventDefault()
             const email = e.target.email.value;
