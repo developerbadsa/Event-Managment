@@ -1,4 +1,5 @@
 import Navbar from "../../Components/Navbar/Navbar";
+import Conference from "./Sections/Conference/Conference";
 import Services from "./Sections/Services/Services";
 import HeroSlider from "./Sections/Slider/HeroSlider";
 
@@ -16,6 +17,7 @@ const Home = () => {
                         <HeroSlider images={images}></HeroSlider>
                         <br />
                         <Services></Services>
+                        <Conference></Conference>
                   </div>
 
                 
