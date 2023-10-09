@@ -3,16 +3,12 @@ import { useLoaderData, useParams } from "react-router-dom";
 
 
 const ServiceDetails = () => {
-      const data = useLoaderData()
+      const data = JSON.parse(useLoaderData())
       const { id } = useParams()
-
-
       const matchedService = data.find(match => match.id == id)
 
       const { name, image, price, big_description
       } = matchedService;
-
-      console.log(matchedService)
 
       return (
             <div className="text-white container mx-auto">

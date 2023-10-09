@@ -7,8 +7,6 @@ const LogInPrivateRoute = ({children}) => {
 
       const {user, loading} = useContext(UserContext)
 
-      console.log(loading)
-
       if(loading){
             return  <span className="loading loading-bars loading-lg"></span>
           

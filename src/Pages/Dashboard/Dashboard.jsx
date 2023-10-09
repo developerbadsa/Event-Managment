@@ -5,7 +5,6 @@ const Dashboard = () => {
   const { user } = useContext(UserContext)
 
   const { photoURL, displayName, email, emailVerified} = user;
-  console.log(displayName)
 
   return (
     <div className="p-3 text-white flex justify-between flex-col lg:flex-row max-w-7xl mx-auto my-12">
