@@ -4,7 +4,7 @@ const Conference = () => {
       return (
             <div className="grid grid-cols-1 lg:grid-cols-3 py-16">
                   <div>
-                        <img className="w-full" src="/public/images/conterence-img.jpeg" alt="" />
+                        <img className="w-full" src="./public/images/conterence-img.jpeg" alt="" />
                   </div>
                   <div className="col-span-2 text-white p-8 lg:pl-10 order-1 my-4 lg:my-0 ">
                         <h2 className="text-xl my-2">Hackathon Conference</h2>
