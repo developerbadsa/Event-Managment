@@ -27,7 +27,7 @@ const HeroSlider = ({ images }) => {
       return (
             <div className="image-slider overflow-hidden w-full mx-auto h-[80vh] flex items-center justify-between">
                   <button onClick={prevImage} className="text-white relative">
-                        <div className="absolute left-5 text-3xl">
+                        <div className="absolute mt-14 left-5 text-3xl">
                               <FaRegArrowAltCircleLeft />
                         </div>
                   </button>
@@ -40,7 +40,7 @@ const HeroSlider = ({ images }) => {
                         </div>
                   </div>
                   <button onClick={nextImage} className="slider-button right text-white">
-                        <div className="absolute right-[16%] text-3xl">
+                        <div className="absolute mt-14 right-[10%] text-3xl">
                               <FaRegArrowAltCircleRight />
                         </div>
                   </button>
