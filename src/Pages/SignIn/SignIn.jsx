@@ -1,6 +1,6 @@
-import { useContext } from "react";
+import { useContext, useRef } from "react";
 import { FaFacebook, FaGithub, FaGoogle } from "react-icons/fa";
-import { Link, Navigate, useLocation, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { UserContext } from "../../AuthProvider/AuthProvider";
 import Swal from "sweetalert2";
 
@@ -8,6 +8,9 @@ import Swal from "sweetalert2";
 const SignIn = () => {
       const { logInUser, GoogleSignIn, FacebookSignIn, GithubSignIn } = useContext(UserContext)
       const navigatePage = useNavigate()
+      const formRef = useRef(null)
+
+      console.log(formRef)
 
       const handleLogin = (e) => {
             e.preventDefault()
@@ -17,6 +20,7 @@ const SignIn = () => {
             logInUser(email, password)
                   .then(() => {
 
+                        formRef.current.reset();
                         navigatePage('/');
 
                         Swal.fire(
@@ -97,7 +101,7 @@ const SignIn = () => {
                         </div>
                         <div className=" flex-1 bg-red-500 rounded-l-lg">
 
-                              <form onSubmit={handleLogin} className="px-24 my-8 lg:my-24">
+                              <form ref={formRef} onSubmit={handleLogin} className="px-24 my-8 lg:my-24">
                                     <div>
                                           <h3 className="text-center font-extrabold text-4xl text-red-50 my-8">Log In</h3>
                                           <div className="flex gap-4 justify-center my-8">
