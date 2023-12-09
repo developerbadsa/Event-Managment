@@ -8,7 +8,11 @@ This project is a website designed for a hackathon event. It provides a user-fri
 
 ## Key Features
 
-### Dynamic Header and Footer
+## Live Website
+
+Visit the live website: [Hackathon Event Website](https://hackathons-45cee.web.app/)
+
+### Dynamic Header and Footer 
 
 - The website features a dynamic header and footer that consistently appear without any errors.
 - The Navbar menu adapts based on the user's login status, showing different menu items for logged-in and logged-out users.
@@ -32,7 +36,7 @@ This project is a website designed for a hackathon event. It provides a user-fri
 ### User Dashboard
 
 - The dashboard page displays the user's profile picture, name, and email.
-- Access to the dashboard and contact page is restricted to logged-in users only.
+- Access to the dashboard and contact page is restricted to logged-in user only.
 
 ### Animation
 
