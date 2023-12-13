@@ -11,7 +11,7 @@ This project is a website designed for a hackathon event. It provides a user-fri
 ## Live Website
 
 Visit the live website: [Hackathon Event Website Live](https://hackathons-45cee.web.app/)
-Server Repo: [Hackathon Event Website Server](https://hackathons-45cee.web.app/)
+Server Repo: [Hackathon Event Website Repo](https://github.com/developerbadsa/Hackathon-Event-Managment-Client.git)
 
 ### Dynamic Header and Footer 
 
